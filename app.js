@@ -8,8 +8,9 @@ displayNotes();
 
 let addBtn = document.getElementById('addBtn');
 addBtn.addEventListener("click",function(e){
-         let addTxt = document.getElementById('addTxt').toLowerCase();
-         let addTitle = document.getElementById('addTitle')
+         let addTxt = document.getElementById('addTxt');
+        //  addTxt = addTxt.toLowerCase();
+         let addTitle = document.getElementById('addTitle');
          let notes = localStorage.getItem("notes");
          let notesObj;
          if(notes == null)
@@ -84,7 +85,7 @@ search.addEventListener("input", function () {
     let inputVal = search.value;
     let cardNotes = document.getElementsByClassName('cardNotes');
     Array.from(cardNotes).forEach(function (element) {
-        let elem2 = element.getElementsByTagName("p")[0].innerText;
+        let elem2 = (element.getElementsByTagName("p")[0].innerText).toLowerCase();
         if(elem2.includes(inputVal)){
             element.style.display = "block";
         }
