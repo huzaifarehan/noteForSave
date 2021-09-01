@@ -85,7 +85,7 @@ search.addEventListener("input", function () {
     let inputVal = search.value.toLowerCase();
     let cardNotes = document.getElementsByClassName('cardNotes');
     Array.from(cardNotes).forEach(function (element) {
-        let elem2 = element.getElementsByTagName("p")[0].innerText;
+        let elem2 = (element.getElementsByTagName("p")[0].innerText).toLowerCase();
         console.log(elem2);
         if(elem2.includes(inputVal)){
             element.style.display = "block";
